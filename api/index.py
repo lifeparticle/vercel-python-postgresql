@@ -26,9 +26,9 @@ class handler(BaseHTTPRequestHandler):
 			cursor.execute("SELECT * FROM students WHERE id = %(student_id)s",{'student_id': dic["student_id"]})
 			values_array = list(cursor.fetchone())
 			col_names = [desc[0] for desc in cursor.description]
-			message	= dict(zip(col_names, values_array), default=str)
+			message	= dict(zip(col_names, values_array))
 		else:
 			message = {"error": "Please provide student_id"}
 
-		self.wfile.write(json.dumps(message).encode())
+		self.wfile.write(json.dumps(message, default=str).encode())
 		return

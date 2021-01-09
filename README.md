@@ -1,2 +1,7 @@
 # vercel-python-postgresql
-vercel-python-postgresql
+
+Run locally
+
+```
+vercel dev
+```

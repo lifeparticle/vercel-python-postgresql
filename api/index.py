@@ -9,7 +9,7 @@ class handler(BaseHTTPRequestHandler):
 	def do_GET(self):
 		connection = psycopg2.connect (
 			host = os.environ.get('HOST'),
-			database = os.environ.get('DATABASE'),
+			dbname = os.environ.get('DATABASE'),
 			user = os.environ.get('USER'),
 			password = os.environ.get('PASSWORD'),
 			port = os.environ.get('PORT'),
